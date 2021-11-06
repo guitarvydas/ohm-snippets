@@ -1,11 +1,16 @@
 mvar {
 top = text*
 text =
-    "@var" ws notSemi+ ";" -- varKW
-  | "@var" ~ws                -- other
-  | any                      -- any
+    ws* "@var" ws* "{" ws* idList ws* "}" ws* "=" ws* notSemi+ ";" ws* -- varKW
+  | any                                    -- any
 ws = " " | "\t" | "\n"
 notSemi = ~";" any
+
+idList = id moreID*
+id = firstChar restChar*
+firstChar = "_" | letter
+restChar = "_" | alnum
+moreID = "," ws* id
 }
 
 
