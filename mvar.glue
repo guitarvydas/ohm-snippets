@@ -1,6 +1,6 @@
 top [@text] = [[${text}]]
 text_varKW [@ws1 kvar @ws2 klb @ws3 IDList @ws4 krb @ws5 keq @ws6 @notSemi ksemi @ws7] =
-    [[ ${kvar} ${klb} ${IDList} ${krb} ${keq} ${notSemi} ${ksemi}]]
+    [[ @var ${support.gensym ()} = ${notSemi} ; ]]
 text_any [c] = [[${c}]]
 ws [c] = [[~]]
 notSemi [c] = [[${c}]]

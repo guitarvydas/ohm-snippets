@@ -20,7 +20,7 @@ exports.generateInitializations = (idlist, initstring) => {
 }
 
 var counter = 0;
-exports.genSym = () => {
+exports.gensym = () => {
     counter += 1;
     return `_gen_${counter}`;
 }
