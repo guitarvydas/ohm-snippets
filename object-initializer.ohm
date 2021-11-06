@@ -1,0 +1,19 @@
+/* convert "var {x,y} = ... ;" to "var temp = ...; var x = temp.x; var y = temp.y;" */
+objectInitializer {
+  Minitializer = 
+    kvar "{" IDList "}" stuff semi -- found
+  | stuff+      -- other
+  kvar = "var "
+  IDList = id ("," moreid)*
+  moreid = id
+  id = firstChar restChar*
+  firstChar = "_" | letter
+  restChar = alnum | firstChar
+  semi= ";"
+  stuff = 
+    ~kvar ~semi any
+  | kvar
+  | semi
+}
+
+

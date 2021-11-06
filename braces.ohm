@@ -1,0 +1,8 @@
+braces {
+top = text*
+text =
+    "{" text* "}"  -- nestedBrace
+  | notBrace      -- notNested
+notBrace = ~"{" ~"}" any
+}
+

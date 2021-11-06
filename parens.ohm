@@ -1,0 +1,8 @@
+parens {
+top = text*
+text =
+    "(" text* ")"  -- nestedParen
+  | notParen      -- notNested
+notParen = ~"(" ~")" any
+}
+

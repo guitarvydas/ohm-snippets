@@ -1,0 +1,4 @@
+top [@text] = [[${text}]]
+text_nestedBrace [lp @text rp] = [[${lp}${text}${rp}]]
+text_notNested [c] = [[${c}]]
+notBrace [c] = [[${c}]]

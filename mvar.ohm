@@ -1,0 +1,9 @@
+mvar {
+top = text*
+text =
+    "var" ws (~";" any)+ ";" -- varKW
+  | "var" ~ws                -- other
+  | any
+ws = " " | "\t" | "\n"
+}
+

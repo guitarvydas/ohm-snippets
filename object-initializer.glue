@@ -1,0 +1,15 @@
+Minitializer_found [kvar lb IDList rb @init semi] =
+  [[var ${support.gentemp ()} = ${init};
+  ${support.generateInitializations (IDList, init)}]]
+Minitializer_other [@stuff] = [[${stuff}]]
+kvar [k] = [[${k}]]
+IDList [id @commas @ids] = 
+    {{support.pushNewIDList ();}}
+    [[${support.prependID (id)}]]
+moreid [id] = [[${support.prependID (id)}]]
+id [c @cs] = [[${c}${cs}]]
+firstChar [c] = [[${c}]]
+restChar [c] = [[${c}]]
+semi [c] = [[${c}]]
+stuff [c] = [[${c}]]
+

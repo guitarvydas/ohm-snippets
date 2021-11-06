@@ -1,0 +1,11 @@
+/* help the downstream filters by making sure that "var" is written as "@var" which ensures that space suppression can't be fooled, e.g. "varxyz" is "varxyz" and "var x" is "@var x" */
+/* @ is chosen because it is illegal as an ident character in JS */
+/* nb. this could be done with a REGEXP, but I insist on writing it as PEG for illustration */
+tokenizer {
+  top = 
+      "var" ws stuff+     -- vardecl
+    | "var" letter stuff  -- notvardecl
+    | stuff+              -- other
+  ws = " " | "\t" | "\n"
+  stuff = ~"var" any
+}
