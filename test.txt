@@ -2,3 +2,4 @@ const x = 1;
 
 var {b, c} = fn2();
 
+varxyz (asdf);
