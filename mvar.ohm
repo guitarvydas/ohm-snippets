@@ -1,9 +1,11 @@
 mvar {
 top = text*
 text =
-    "var" ws (~";" any)+ ";" -- varKW
-  | "var" ~ws                -- other
-  | any
+    "@var" ws notSemi+ ";" -- varKW
+  | "@var" ~ws                -- other
+  | any                      -- any
 ws = " " | "\t" | "\n"
+notSemi = ~";" any
 }
+
 

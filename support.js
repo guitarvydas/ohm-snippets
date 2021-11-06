@@ -18,3 +18,9 @@ exports.generateInitializations = (idlist, initstring) => {
     });
     return result.join ('');
 }
+
+var counter = 0;
+exports.genSym = () => {
+    counter += 1;
+    return `_gen_${counter}`;
+}

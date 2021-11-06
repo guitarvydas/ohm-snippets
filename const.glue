@@ -1,4 +1,4 @@
-code_found [kconst code] = [[var ${code}]]
+code_found [kconst code] = [[@var ${code}]]
 code_other [@stuff] = [[${stuff}]]
 kconst [s] = [[${s}]]
 stuff [c] = [[${c}]]

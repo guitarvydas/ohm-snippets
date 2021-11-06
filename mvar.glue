@@ -1,0 +1,5 @@
+top [@text] = [[${text}]]
+text_varKW [kvar ws @notSemi semi] = [[@var ${support.genSym ()} = ${notSemi};]]
+text_other [kvar] = [[${kvar}]]
+ws [c] = [[${c}]]
+notSemi [c] = [[${c}]]
