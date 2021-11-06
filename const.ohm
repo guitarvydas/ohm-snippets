@@ -1,0 +1,10 @@
+/* snippet of Ohm code to convert const to var in JS code */
+
+constConverter {
+  code = 
+    kconst code -- found
+  | stuff+      -- other
+  kconst = "const "
+  stuff = ~kconst any
+}
+
