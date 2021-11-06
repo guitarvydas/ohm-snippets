@@ -3,3 +3,7 @@ const x = 1;
 var {b, c} = fn2();
 
 varxyz (asdf);
+
+avarb(c);
+vard (c);
+var x;

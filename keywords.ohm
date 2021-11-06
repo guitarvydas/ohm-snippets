@@ -2,10 +2,11 @@ keywords {
 top = text*
 keyword = "var"
 text =
-    ~keyword any -- other
+    keyword idchar -- notKeyword
   | "@" keyword -- keyword
-  | notIDChar ~"@" keyword ~idchar text -- newKeyword
+  | keyword ~idchar text -- newKeyword
+  | any -- other
 idchar = alnum | "_"
-notIDChar = ~idchar any
 }
+
 
