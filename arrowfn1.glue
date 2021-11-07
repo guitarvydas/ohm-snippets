@@ -1,7 +1,7 @@
 top [@text] = [[${text}]]
-text_arrowfn1 [lp @ws1 @lp1 @id @rp1 @ws2 karrow @ws3 lb @ws4 @text rb @ws5 rp @ws6] =
+text_arrowfn1 [lp @ws1 @lp1 @id @moreid @rp1 @ws2 karrow @ws3 lb @ws4 @text rb @ws5 rp @ws6] =
     [[(
-function (${id}) {
+function (${id}${moreid}) {
 ${text} })]]
 text_nestedParen [lb @text rb] = [[${lb}${text}${rb}]]
 text_nestedBrace [lb @text rb] = [[${lb}${text}${rb}]]
@@ -12,3 +12,5 @@ id [c @cs] = [[${c}${cs}]]
 firstChar [c] = [[${c}]]
 restChar [c] = [[${c}]]
 ws [c] = [[${c}]]
+
+moreID [kcomma @ws id @ws2] = [[, ${id}]]
