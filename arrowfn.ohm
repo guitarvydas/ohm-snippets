@@ -1,10 +1,10 @@
 parens {
 top = text*
 text =
-    "(" ws* id ws* "=>" ws* text* ws* ")" ws*  -- arrowfnBare
-  |  "(" ws* "("? id? moreID* ")"? ws* "=>" ws* "{" ws* text* "}" ws* ")" ws*  -- arrowfn1
+    "(" ws* "("? id? moreID* ")"? ws* "=>" ws* "{" ws* text* "}" ws* ")" ws*  -- arrowfn1
   | "(" text* ")"  -- nestedParen
   | "{" text* "}"  -- nestedBrace
+  | "(" ws* id ws* "=>" ws* text* ws* ")" ws*  -- arrowfnBare
   | notBracket     -- notNested
 notBracket = ~"(" ~")" ~"{" ~"}" any
 id = firstChar restChar*
