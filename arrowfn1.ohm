@@ -1,7 +1,7 @@
 parens {
 top = text*
 text =
-    "(" ws* "("? id ")"? ws* "=>" ws* "{" ws* text* "}" ws* ")" ws*  -- arrowfn1
+    "(" ws* "("? id? ")"? ws* "=>" ws* "{" ws* text* "}" ws* ")" ws*  -- arrowfn1
   | "(" text* ")"  -- nestedParen
   | "{" text* "}"  -- nestedBrace
   | notBracket     -- notNested

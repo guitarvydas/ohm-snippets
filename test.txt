@@ -28,3 +28,9 @@ var x;
     Object.keys(rules).forEach((ruleName) => {
       var  ruleRecipe = rules[ruleName];
     });
+    Object.keys(rules).forEach((a, b) => {
+      var  ruleRecipe = rules[ruleName];
+    });
+    Object.keys(rules).forEach(() => {
+      var  ruleRecipe = rules[ruleName];
+    });
