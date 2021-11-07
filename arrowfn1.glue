@@ -1,0 +1,12 @@
+top [@text] = [[${text}]]
+text_arrowfn1 [lp @ws1 id @ws2 karrow @ws3 lb @ws4 @text rb @ws5 rp @ws6] =
+    [[${lp}${ws1}${id}${ws2}${karrow}${ws3}${lb}${ws4}${text}${rb}${ws5}${rp}${ws6}]]
+text_nestedParen [lb @text rb] = [[${lb}${text}${rb}]]
+text_nestedBrace [lb @text rb] = [[${lb}${text}${rb}]]
+text_notNested [c] = [[${c}]]
+
+notBracket [c] = [[${c}]]
+id [c @cs] = [[${c}${cs}]]
+firstChar [c] = [[${c}]]
+restChar [c] = [[${c}]]
+ws [c] = [[${c}]]

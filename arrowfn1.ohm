@@ -1,0 +1,14 @@
+parens {
+top = text*
+text =
+    "(" ws* id ws* "=>" ws* "{" ws* text* "}" ws* ")" ws*  -- arrowfn1
+  | "(" text* ")"  -- nestedParen
+  | "{" text* "}"  -- nestedBrace
+  | notBracket     -- notNested
+notBracket = ~"(" ~")" ~"{" ~"}" any
+id = firstChar restChar*
+firstChar = "_" | letter
+restChar = "_" | alnum
+ws = " " | "\t" | "\n"
+}
+
