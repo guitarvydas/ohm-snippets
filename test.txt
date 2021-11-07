@@ -25,3 +25,6 @@ var x;
       }
       gDecl[action](ruleName, formals, body, description, source);
     });
+    Object.keys(rules).forEach((ruleName) => {
+      var  ruleRecipe = rules[ruleName];
+    });
