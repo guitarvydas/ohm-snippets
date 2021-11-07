@@ -2,7 +2,13 @@ top [@text] = [[${text}]]
 text_arrowfn1 [lp @ws1 @lp1 @id @moreid @rp1 @ws2 karrow @ws3 lb @ws4 @text rb @ws5 rp @ws6] =
     [[(
 function (${id}${moreid}) {
-${text} })]]
+${text} })${ws6}]]
+
+text_arrowfnBare [lp @ws1 id @ws2 karrow @ws3 @text @ws4 rp @ws5] =
+    [[(
+function (${id}) {
+${text} })${ws5}]]
+
 text_nestedParen [lb @text rb] = [[${lb}${text}${rb}]]
 text_nestedBrace [lb @text rb] = [[${lb}${text}${rb}]]
 text_notNested [c] = [[${c}]]
