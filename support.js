@@ -2,6 +2,7 @@ var idlist = [];
 
 exports.pushNewIDList = () => {
     idlist.push ([]);
+    return '';
 }
 
 exports.prependID = (name) => {
@@ -9,17 +10,22 @@ exports.prependID = (name) => {
     var newlist = idlist.pop ();
     newlist.unshift (name);
     idlist.push (newlist);
+    return '';
 }
 
-exports.generateInitializations = (idlist, initstring) => {
+exports.generateInitializations = (tempname, initstring) => {
     var result = [];
-    idlist.forEach (name => {
-	result.push (`var ${name} = ${initstring};\n`);
+    var idarray = idlist.pop ();
+    idarray.forEach (name => {
+	result.push (`@var ${name} = ${tempname}.${name};\n`);
     });
     return result.join ('');
 }
 
 var counter = 0;
+exports.currsym = () => {
+    return `_gen_${counter}`;
+}
 exports.gensym = () => {
     counter += 1;
     return `_gen_${counter}`;

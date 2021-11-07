@@ -1,11 +1,15 @@
 top [@text] = [[${text}]]
-text_varKW [@ws1 kvar @ws2 klb @ws3 IDList @ws4 krb @ws5 keq @ws6 @notSemi ksemi @ws7] =
-    [[ @var ${support.gensym ()} = ${notSemi} ; ]]
+text_varKW [@ws1 kvar @ws2 klb @ws3 IDList @ws4 krb @ws5 keq @ws6 @initString ksemi @ws7] =
+    {{ support.pushNewIDList (); }}
+    [[
+@var ${support.gensym ()} = ${initString};
+${support.generateInitializations (support.currsym ())}
+    ]]
 text_any [c] = [[${c}]]
 ws [c] = [[~]]
 notSemi [c] = [[${c}]]
-idList [id @moreID] = [[ ${id} ${moreID} ]]
+idList [id @moreID] = [[ ${support.prependID (id)} ]]
 id [c @cs] = [[${c}${cs}]]
 firstChar [c] = [[${c}]]
 restChar [c] = [[${c}]]
-moreID [kcomma @ws id] = [[ , ${id} ]]
+moreID [kcomma @ws id] = [[${support.prependID (id)}]]
