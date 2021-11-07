@@ -1,0 +1,6 @@
+unkeyword {
+top = text*
+text =
+    "@var" text -- kwVar
+  | any -- any
+}
