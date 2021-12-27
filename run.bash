@@ -6,3 +6,5 @@ cwd=`pwd`
 node a.js
 echo 'and print x one more time'
 pre '.' '$' alex.ohm alex.glue --stop=1 --input=a.txt
+echo 'and print x one more time'
+pre '.' '$' asyn.ohm asyn.glue --stop=1 --input=a.txt

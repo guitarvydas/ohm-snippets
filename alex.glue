@@ -1,1 +1,1 @@
-main [x @ws] = [[x]]
+main [match @ws] = [[x]]
