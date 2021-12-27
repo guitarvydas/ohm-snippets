@@ -1,0 +1,3 @@
+main [ k1 prule1 k2 prule2 k3 @ws ] = [[${k1}${prule1}${k2}${prule2}${k3}${ws}]]
+paramrule1 [k] = [[${k}]]
+paramrule2 [k] = [[${k}]]

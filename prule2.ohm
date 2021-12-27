@@ -1,0 +1,6 @@
+parameterizedrule {
+  main = "a" paramrule1 "b" paramrule2 "c" ws*
+  paramrule1 = ","
+  paramrule2 = "+"
+  ws = " " | "\n"
+}
