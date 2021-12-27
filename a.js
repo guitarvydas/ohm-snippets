@@ -4,7 +4,7 @@ var ohm = require ('ohm-js');
 
 let text = 'a';
 
-let grammar = String.raw`
+let lexicalgrammar = String.raw`
 simplelexicalgrammar {
   main = "a"
 }
@@ -16,13 +16,18 @@ simplesyntacticgrammar {
 }
 `;
 
-let semanticsFunctions = {
-    main: function (capture) { return '*'; },
+let lexicalsemanticsFunctions = {
+    main: function (capture) { return 'x'; },
+    _iter: function (...children) { return children.map(c => c._glue ()); },
+    _terminal: function () { return this.sourceString; }
+};
+let syntacticsemanticsFunctions = {
+    Main: function (capture) { return 'x'; },
     _iter: function (...children) { return children.map(c => c._glue ()); },
     _terminal: function () { return this.sourceString; }
 };
 
-function parse (text) {
+function parse (text, grammar, semanticsFunctions) {
     let parser = ohm.grammar (grammar);
     let cst = parser.match (text);
     if (cst.succeeded) {
@@ -34,4 +39,6 @@ function parse (text) {
     }
 }
 
-parse (text);
+console.log ('this should print x twice');
+parse (text, lexicalgrammar, lexicalsemanticsFunctions);
+parse (text, syntacticgrammar, syntacticsemanticsFunctions);

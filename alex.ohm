@@ -1,0 +1,4 @@
+simplelexicalgrammar {
+  main = "a" ws*
+  ws = " " | "\n"
+}
