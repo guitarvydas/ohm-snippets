@@ -4,16 +4,17 @@ var ohm = require ('ohm-js');
 
 let text = 'a';
 
-let grammar = Str.raw`
+let grammar = String.raw`
 simplelexicalgrammar {
   main = "a"
 }
 `;
 
-let syntacticgrammar = Str.raw`
+let syntacticgrammar = String.raw`
 simplesyntacticgrammar {
   Main = "a"
 }
+`;
 
 let semanticsFunctions = {
     main: function (capture) { return '*'; },
@@ -27,7 +28,7 @@ function parse (text) {
     if (cst.succeeded) {
 	let sem = parser.createSemantics ();
 	sem.addOperation ('op', semanticsFunctions);
-	console.log ( sem (cst)['op'] );
+	console.log ( sem (cst)['op'] ());
     } else {
 	throw "something is terribly wrong";
     }

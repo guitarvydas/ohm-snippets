@@ -1,4 +1,6 @@
 #!/bin/bash
+echo 'use run.bash'
+exit 1
 cwd=`pwd`
 #pfr - object-initializer.ohm object-initializer.glue $cwd/support.js
 pre '.' '$' prule.ohm prule.glue --stop=1 --input=prule.txt

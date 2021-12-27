@@ -1,9 +1,5 @@
 #!/bin/bash
 cwd=`pwd`
-pfr test.txt const.ohm const.glue \
-    | pfr - parens.ohm identity-parens.glue $cwd/support.js \
-    | pfr - braces.ohm identity-braces.glue $cwd/support.js \
-    | pfr - keywords.ohm keywords.glue $cwd/support.js \
-    | pfr - mvar.ohm mvar.glue $cwd/support.js \
-    | pfr - arrowfn.ohm arrowfn.glue $cwd/support.js \
-    | pfr - unkeyword.ohm unkeyword.glue $cwd/support.js
+pre '.' '$' prule.ohm prule.glue --stop=1 --input=prule.txt
+pre '.' '$' prule2.ohm prule2.glue --stop=1 --input=prule.txt
+node a.js
